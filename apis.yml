@@ -1,7 +1,28 @@
 aid: fanhouse
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fanhouse.png
 name: Fanhouse
-description: Fanhouse is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Fanhouse was a creator-subscription social platform, backed by a16z, that let
+  fans pay creators directly for exclusive posts, photos, and community access
+  rather than through ad-driven feeds. It was surfaced as an a16z portfolio
+  company and added to the API Evangelist network as a stub for enrichment. The
+  original product operated at fanhouse.app, which no longer resolves to the
+  company (it now redirects to an unrelated domain), indicating the a16z-backed
+  platform is defunct. No public developer portal, API documentation, OpenAPI
+  definition, or other machine-readable API surface could be located for the
+  original Fanhouse product, so no scored API artifacts could be produced without
+  fabrication. This profile is retained as a company/lead record.
 url: https://raw.githubusercontent.com/api-evangelist/fanhouse/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +30,48 @@ x-backed-by:
 - a16z
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-status: defunct
+x-status-note: >-
+  Original product domain fanhouse.app no longer resolves to the company. Re-verified
+  2026-07-20: https://fanhouse.app/ and https://www.fanhouse.app/ both redirect to
+  https://www.reddragonbrewery.com/ (HTTP 403 at the redirect target); api.fanhouse.app
+  does not resolve (connection failure); /.well-known/security.txt and /llms.txt on
+  fanhouse.app return 301 to the same unrelated host. No API surface located.
+x-verification:
+  date: '2026-07-20'
+  method: probed
+  findings:
+  - host: fanhouse.app
+    result: 301 redirect to www.reddragonbrewery.com (unrelated domain)
+  - host: api.fanhouse.app
+    result: DNS does not resolve
+  - host: github.com/fanhouse
+    result: >-
+      HTTP 200 but NOT first-party — 3 public repos (meme, -meme, jquery fork), all last
+      updated May 2018, predating the Fanhouse product. Not wired as GitHubOrganization.
+  - host: www.fanhouse.com
+    result: >-
+      HTTP 200, live creator-monetization platform for studios/agencies. A DISTINCT
+      entity from the defunct a16z-backed fanhouse.app product; not merged into this
+      record. No developer surface found (/docs, /developers, /llms.txt,
+      /.well-known/security.txt all 404).
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Creator Economy
+- Social
+- Subscriptions
+- Fan Engagement
+- Content Monetization
+- Defunct
 apis: []
+x-enrichment:
+  date: '2026-07-20'
+  status: nochange
+  artifacts_added: 0
+  pass: local-v1
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
