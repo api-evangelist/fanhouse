@@ -55,7 +55,7 @@ x-verification:
       entity from the defunct a16z-backed fanhouse.app product; not merged into this
       record. No developer surface found (/docs, /developers, /llms.txt,
       /.well-known/security.txt all 404).
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-20'
 tags:
